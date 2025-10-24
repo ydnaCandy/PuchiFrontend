@@ -5,21 +5,18 @@
     <title>期情報検索</title>
 </head>
 <body>
-    <h1>期間検索</h1>
+    <h1>指定した期の期間検索</h1>
 
     <div>
         <label for="ki-input">検索したい期を入力してください:</label>
         <input type="number" id="ki-input" placeholder="例: 1, 2, 3">
         <button id="search-button">検索</button>
-        <p id="message"></p>
+        <hr>
+        <br>
+        <p id="start_dt"></p>
+        <p id="end_dt"></p>
     </div>
-
     <hr>
-
-    <h2>検索結果</h2>
-    <div id="ki-detail-container">
-        <p>期番号を入力して検索してください。</p>
-    </div>
 
     <script src="ki_app.js"></script>
 </body>

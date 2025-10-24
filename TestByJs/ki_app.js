@@ -1,6 +1,8 @@
 const kiInput = document.getElementById('ki-input');
+const kiStartDt = document.getElementById("start_dt")
+const kiEndDt = document.getElementById("end_dt")
 const searchButton = document.getElementById('search-button');
-
+const BASE_URL = 'http://127.0.0.1:8000';
 
 // ボタンクリック時の関数
 function handleSearchClick() {
@@ -21,6 +23,27 @@ function handleSearchClick() {
         // 数値に変換できるか試します (次のステップで役立ちます)
         const kiNumber = parseInt(kiNumberStr, 10);
         console.log("入力された期番号 (数値):", kiNumber);
+        // APIを叩く
+        fetch(BASE_URL+ '/ki/' + kiNumber)
+            // レスポンスを取得しJSONを抽出
+            .then(response => {
+                if (!response.ok) {
+                    // レスホンスがokじゃない場合はエラーを投げる
+                    throw new Error("データを取得できませんでした (ステータス: ${response.status})")
+                }
+                return response.json()
+            })
+            .then(data => {
+                console.log(data)
+                // 取得したデータを出力
+                kiStartDt.textContent = "開始日：" + data.start_date
+                kiEndDt.textContent = "終了日：" + data.end_date
+            })
+            .catch(error => {
+                console.error("API処理中にエラーが発生しました：", error.message);
+                kiStartDt.textContent = "エラーが発生しました: データなし";
+                kiEndDt.textContent = "";
+            })
     }
 }
 
