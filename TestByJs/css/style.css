@@ -1,0 +1,40 @@
+/* 全体を左右に分けるコンテナ */
+#app-container {
+    display: flex;       /* Flexboxを使って子要素を横に並べる */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* サイドメニューのスタイル */
+#sidebar {
+    width: 200px; /* メニューの幅を固定 */
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+    height: 100vh; /* 画面全体と同じ高さ */
+}
+#sidebar button {
+    display: block; /* ボタンを縦に並べる */
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    text-align: left;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+#sidebar button:hover {
+    background-color: #e0e0e0;
+}
+
+/* メインコンテンツエリアのスタイル */
+#content-area {
+    flex-grow: 1; /* 残りのスペースを全て占有 */
+    padding: 20px;
+}
+
+/* 機能セクションのスタイルはそのまま使用 */
+.feature-section {
+    border: 1px solid #eee;
+    padding: 20px;
+}

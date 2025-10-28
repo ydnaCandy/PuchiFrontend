@@ -1,8 +1,15 @@
 const kiInput = document.getElementById('ki-input');
 const kiStartDt = document.getElementById("start_dt")
 const kiEndDt = document.getElementById("end_dt")
-const searchButton = document.getElementById('search-button');
+const searchButton = document.getElementById('ki-search-btn');
 const BASE_URL = 'http://127.0.0.1:8000';
+
+// 必要なDOM要素をそのまま取得
+const tabSearchKi = document.getElementById('tab-search-ki');
+const tabListKi = document.getElementById('tab-list-ki');
+const featureSearchKi = document.getElementById('feature-search-ki');
+const featureListKi = document.getElementById('feature-list-ki');
+
 
 // ボタンクリック時の関数
 function handleSearchClick() {
@@ -49,3 +56,15 @@ function handleSearchClick() {
 
 // 「検索」ボタンにイベントリスナーを設定
 searchButton.addEventListener('click', handleSearchClick);
+
+
+// 機能の切り替え
+tabSearchKi.addEventListener('click', () => {
+    featureSearchKi.style.display = 'block'; 
+    featureListKi.style.display = 'none';
+});
+
+tabListKi.addEventListener('click', () => {
+    featureSearchKi.style.display = 'none'; 
+    featureListKi.style.display = 'block';
+});
