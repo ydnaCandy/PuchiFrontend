@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>期情報検索</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div id="app-container">
+        <nav id="sidebar">
+            <h1>お道具箱</h1>
+            <h2>メニュー</h2>
+            <button id="tab-search-ki">期検索</button>
+            <button id="tab-list-ki">期全期間表示</button>
+        </nav>
+
+        <main id="content-area">
+            <div id="feature-search-ki" class="feature-section" style="display: block;">
+                <h2>期検索機能</h2>
+                <input type="number" id="ki-input" placeholder="期">
+                <button id="ki-search-btn">検索</button>
+                <hr>
+                <p id="start_dt"></p>
+                <p id="end_dt"></p>
+            </div>
+
+            <div id="feature-list-ki" class="feature-section" style="display: none;">
+                <h2>期全期間リストエリア</h2>
+                <div id="ki-list-container"></div>
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="ki_app.js"></script>
+</body>
+</html>
