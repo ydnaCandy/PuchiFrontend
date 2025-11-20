@@ -2,7 +2,7 @@ const kiInput = document.getElementById('ki-input');
 const kiStartDt = document.getElementById("start_dt")
 const kiEndDt = document.getElementById("end_dt")
 const searchButton = document.getElementById('ki-search-btn');
-const BASE_URL = 'http://127.0.0.1:8000';
+const BASE_URL = 'http://192.168.3.101:30080';
 
 // 必要なDOM要素をそのまま取得
 const tabSearchKi = document.getElementById('tab-search-ki');
